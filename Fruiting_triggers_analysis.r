@@ -19,6 +19,8 @@ climate=climate |> mutate(rollP=abs(jitter(rollP, amount=0.05)), rollT=abs(jitte
 # then the data was subsetted for the first to last sporocarp sighting days.
 
 # -------------------------------------------------------------- General -----------------------------------------------------------------#
+# Total mushroon samples across the study
+sum(climate$Mnb) # 1905 total mushrooms
 # first # 08/05 and last date 11/21 
 climate |>  group_by(year) |>  arrange(Date) |> group_split()
 climate |>  group_by(year) |>  arrange(desc(Date)) |> group_split()
